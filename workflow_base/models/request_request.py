@@ -102,6 +102,10 @@ class RequestRequest(models.Model):
                                                       route_id=route.id).run()
 
                 if action:
+                    # Ensure 'views' field exists for ir.actions.act_window (required by Odoo 18 JS)
+                    if action.get('type') == 'ir.actions.act_window' and 'views' not in action:
+                        view_mode = action.get('view_mode', 'form')
+                        action['views'] = [(False, mode.strip()) for mode in view_mode.split(',')]
                     return action
                 if route.stage_to_id:
                     self.stage_id = route.stage_to_id.id

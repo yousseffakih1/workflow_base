@@ -1,5 +1,5 @@
 <templates>
-    <span t-name="workflow_base.stage_buttons" class="stage_route_out_span_wrapper" style="gap: 0px 9px; display: flex; margin-left: 4px;">
+    <span t-name="workflow_base.stage_buttons" class="stage_route_out_span_wrapper">
          <t t-foreach="state.value_json.routes" t-as="route" t-key="route.id">
              <!--                        btn-{{ route.btn_style == 'default' ? 'primary' : route.btn_style }}-->
 

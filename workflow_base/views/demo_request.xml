@@ -17,8 +17,13 @@
             <field name="arch" type="xml">
                 <form string="Demo Request">
                     <header>
-                        <field name="stage_route_out_json" widget="stage_route_out_widget" nolabel="1"/>
-                        <field name="stage_id" widget="statusbar" options="{'clickable': '0'}"/>
+                        <div class="stage_route_out_wrapper">
+                            <field name="stage_route_out_json" widget="stage_route_out_widget"/>
+                            <field name="type_id" invisible="1"/>
+                        </div>
+                        <field name="stage_id" widget="statusbar"
+                        readonly="1"
+                        domain="[('visible', '=', True), ('type_id', '=', type_id)]"/>
                     </header>
                     <sheet>
                         <div class="oe_button_box" name="button_box"/>

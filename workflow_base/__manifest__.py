@@ -2,43 +2,56 @@
 {
     'name': "Workflow Base",
 
-    'summary': """
-        Visual workflow builder for Odoo - Create and manage request workflows with drag & drop designer""",
+    'summary': "Visual workflow builder with drag & drop designer - Create approval workflows, stages & routes",
 
     'description': """
-Workflow Base - Visual Workflow Builder for Odoo
-=================================================
+Workflow Base - Visual Workflow Builder for Odoo 18
+====================================================
 
-This module provides a powerful and flexible workflow management system for Odoo 18.
+A powerful and flexible visual workflow management system for Odoo 18.
+Design complex approval workflows with an intuitive drag-and-drop interface.
 
-Features:
----------
-* **Visual Workflow Designer**: Drag & drop interface to create and manage workflows
-* **Request Types**: Define different types of workflows for your business processes
-* **Stages**: Configure workflow stages with colors, visibility, and readonly settings
-* **Routes**: Define transitions between stages with conditions and actions
-* **Access Control**: Control who can move requests through specific routes
-* **Server Actions**: Trigger server actions when transitioning between stages
-* **Inherit & Extend**: Easy to extend for your own models
+KEY FEATURES
+------------
+* Visual Workflow Designer - Drag & drop stages and routes on a canvas (JointJS)
+* Request Types - Create different workflow types for any Odoo model
+* Configurable Stages - Colors, visibility, draft/done flags, readonly controls
+* Flexible Routes - Transitions with button styles, descriptions, conditions
+* Access Control - Restrict routes by user groups or specific users
+* Server Actions - Trigger wizards, emails, or custom code on transitions
+* Easy Integration - Simple Python inheritance to add workflows to any model
+* Demo Module - Complete demo.request example included
 
-Usage:
-------
-1. Go to Administration > Workflow Configuration > Request Types
-2. Create a new Request Type and link it to your model
-3. Use the Workflow Designer to visually create stages and routes
-4. Inherit `request.request` in your model to enable workflow functionality
+WORKFLOW CONFIGURATION
+----------------------
+1. Settings > Workflow Configuration > Request Types
+2. Create a Request Type linked to your model
+3. Use the visual Workflow Designer tab
+4. Configure stages (colors, readonly, visibility)
+5. Define routes (buttons, permissions, actions)
 
-Example:
---------
-```python
-class MyRequest(models.Model):
-    _name = 'my.request'
-    _inherit = ['request.request', 'mail.thread']
-    _description = 'My Request'
+QUICK START
+-----------
+Inherit request.request in your model:
 
-    name = fields.Char(string='Name', required=True)
-    # Add your fields here
-```
+    class MyRequest(models.Model):
+        _name = 'my.request'
+        _inherit = ['request.request', 'mail.thread']
+
+        name = fields.Char(required=True)
+
+Add to your form view:
+
+    <field name="stage_route_out_json" widget="stage_route_out_widget"/>
+    <field name="stage_id" widget="statusbar"/>
+    <field name="name" readonly="can_readonly"/>
+
+DEMO WORKFLOW
+-------------
+* 5 Stages: Draft > Pending > Approved/Rejected > Completed
+* 5 Routes: Submit, Approve, Reject (with wizard), Complete, Reset
+* Readonly fields after submission
+* Kanban view with stage grouping
     """,
 
     'author': "Workflow Base Contributors",
@@ -46,7 +59,13 @@ class MyRequest(models.Model):
     'license': 'LGPL-3',
 
     'category': 'Technical',
-    'version': '18.0.1.0.0',
+    'version': '18.0.1.0.1',
+
+    'images': [
+        'static/description/captures/2.png',
+        'static/description/captures/12.png',
+        'static/description/captures/8.png',
+    ],
 
     'depends': ['base', 'mail'],
 
@@ -76,6 +95,7 @@ class MyRequest(models.Model):
             # Stage Buttons Widget
             'workflow_base/static/src/js/stage_route_out/stage_buttons.js',
             'workflow_base/static/src/js/stage_route_out/stage_buttons.xml',
+            'workflow_base/static/src/js/stage_route_out/stage_buttons.scss',
 
             # Workflow Graph Widget
             'workflow_base/static/src/js/workflow_graph/workflow_graph.js',

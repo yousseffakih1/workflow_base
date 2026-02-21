@@ -90,6 +90,7 @@ if records:
         'type': 'ir.actions.act_window',
         'res_model': 'demo.reject.wizard',
         'view_mode': 'form',
+        'views': [(False, 'form')],
         'target': 'new',
         'context': {
             'default_demo_request_id': records[0].id,

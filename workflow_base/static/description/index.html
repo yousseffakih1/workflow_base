@@ -9,47 +9,60 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
             padding: 20px;
+            background: #fff;
         }
         h1 {
             color: #714B67;
             border-bottom: 3px solid #714B67;
             padding-bottom: 10px;
+            font-size: 2.2em;
         }
         h2 {
             color: #00A09D;
-            margin-top: 30px;
+            margin-top: 40px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #714B67;
+            margin-top: 25px;
         }
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
-            margin: 20px 0;
+            margin: 25px 0;
         }
         .feature {
-            background: #f8f9fa;
-            border-radius: 8px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+            border-radius: 10px;
             padding: 20px;
             border-left: 4px solid #00A09D;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
         .feature h3 {
             color: #714B67;
             margin-top: 0;
+            margin-bottom: 10px;
         }
         code {
             background: #f4f4f4;
             padding: 2px 6px;
             border-radius: 4px;
             font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9em;
         }
         pre {
             background: #2d3748;
             color: #e2e8f0;
-            padding: 15px;
-            border-radius: 8px;
+            padding: 20px;
+            border-radius: 10px;
             overflow-x: auto;
+            font-size: 0.9em;
         }
         pre code {
             background: none;
@@ -58,45 +71,166 @@
         .highlight {
             background: linear-gradient(135deg, #714B67 0%, #00A09D 100%);
             color: white;
-            padding: 30px;
-            border-radius: 12px;
+            padding: 35px;
+            border-radius: 15px;
             margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(113, 75, 103, 0.3);
         }
         .highlight h2 {
             color: white;
             margin-top: 0;
+            border: none;
+            font-size: 1.8em;
         }
-        ul {
-            padding-left: 20px;
+        .highlight p {
+            font-size: 1.1em;
+            margin-bottom: 0;
+            opacity: 0.95;
+        }
+        ul, ol {
+            padding-left: 25px;
         }
         li {
-            margin: 8px 0;
+            margin: 10px 0;
         }
         .badge {
             display: inline-block;
             background: #00A09D;
             color: white;
-            padding: 4px 12px;
+            padding: 5px 14px;
             border-radius: 20px;
             font-size: 0.85em;
-            margin-right: 5px;
+            margin-right: 8px;
+            margin-bottom: 5px;
+        }
+        .badge-purple {
+            background: #714B67;
+        }
+
+        /* Screenshots Section */
+        .screenshot-section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #fafbfc;
+            border-radius: 12px;
+        }
+        .screenshot-section h3 {
+            margin-top: 0;
+            color: #714B67;
+        }
+        .screenshot {
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
+        .screenshot img {
+            width: 100%;
+            display: block;
+            border: 1px solid #e0e0e0;
+        }
+        .screenshot-caption {
+            background: #f0f0f0;
+            padding: 12px 15px;
+            font-size: 0.9em;
+            color: #555;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        /* Steps */
+        .steps {
+            counter-reset: step;
+            list-style: none;
+            padding-left: 0;
+        }
+        .steps li {
+            counter-increment: step;
+            position: relative;
+            padding-left: 50px;
+            margin: 20px 0;
+        }
+        .steps li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            background: #00A09D;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Workflow Demo */
+        .workflow-demo {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+        .workflow-stages {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .stage {
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 0.9em;
+        }
+        .stage-draft { background: #6c757d; color: white; }
+        .stage-pending { background: #0d6efd; color: white; }
+        .stage-approved { background: #198754; color: white; }
+        .stage-rejected { background: #dc3545; color: white; }
+        .stage-completed { background: #198754; color: white; }
+        .arrow { color: #aaa; font-size: 1.5em; }
+
+        .info-box {
+            background: #e7f5ff;
+            border-left: 4px solid #0d6efd;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .info-box strong {
+            color: #0d6efd;
         }
     </style>
 </head>
 <body>
     <h1>Workflow Base</h1>
     <p>
-        <span class="badge">Odoo 18</span>
+        <span class="badge badge-purple">Odoo 18</span>
         <span class="badge">Visual Designer</span>
         <span class="badge">Drag & Drop</span>
+        <span class="badge">JointJS</span>
+        <span class="badge">LGPL-3</span>
     </p>
 
     <div class="highlight">
         <h2>Visual Workflow Builder for Odoo</h2>
         <p>
             Create and manage complex approval workflows with an intuitive drag-and-drop interface.
-            No coding required to define stages, transitions, and approval rules.
+            Design stages, transitions, and approval rules visually - no coding required for workflow configuration.
         </p>
+    </div>
+
+    <!-- Screenshot: Workflow Designer -->
+    <div class="screenshot-section">
+        <h3>Visual Workflow Designer</h3>
+        <p>Design your workflows visually with our intuitive drag-and-drop interface powered by JointJS. Create stages, connect them with routes, and see your complete workflow at a glance.</p>
+        <div class="screenshot">
+            <img src="captures/2.png" alt="Visual Workflow Designer"/>
+            <div class="screenshot-caption">The visual workflow designer showing stages (Draft, Pending, Approved, Rejected, Completed) and their transitions with color-coded routes.</div>
+        </div>
     </div>
 
     <h2>Key Features</h2>
@@ -104,48 +238,266 @@
     <div class="feature-grid">
         <div class="feature">
             <h3>Visual Workflow Designer</h3>
-            <p>Drag and drop interface to create workflow stages and define transitions between them. See your workflow as a visual flowchart.</p>
+            <p>Drag and drop interface to create workflow stages and define transitions. See your workflow as a visual flowchart with color-coded stages and routes.</p>
         </div>
 
         <div class="feature">
             <h3>Request Types</h3>
-            <p>Define different workflow types for various business processes. Each type has its own stages and routes.</p>
+            <p>Define different workflow types for various business processes. Each type has its own stages, routes, and can be linked to any Odoo model.</p>
         </div>
 
         <div class="feature">
-            <h3>Stages & Routes</h3>
-            <p>Configure workflow stages with colors, visibility settings, and readonly controls. Define routes with conditions and actions.</p>
+            <h3>Configurable Stages</h3>
+            <p>Configure stages with colors, visibility settings, draft/done flags, and readonly controls to lock fields after certain stages.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Flexible Routes</h3>
+            <p>Define transitions with custom button styles (primary, success, danger), descriptions, and conditions for visibility.</p>
         </div>
 
         <div class="feature">
             <h3>Access Control</h3>
-            <p>Control who can move requests through specific routes using user groups and user-level permissions.</p>
+            <p>Control who can move requests through specific routes using user groups and individual user permissions.</p>
         </div>
 
         <div class="feature">
             <h3>Server Actions</h3>
-            <p>Trigger automated server actions when transitioning between stages. Send emails, update records, or run custom code.</p>
-        </div>
-
-        <div class="feature">
-            <h3>Easy Integration</h3>
-            <p>Simply inherit from <code>request.request</code> to add workflow capabilities to any Odoo model.</p>
+            <p>Trigger automated actions on transitions: open wizards, send emails, update records, or run custom Python code.</p>
         </div>
     </div>
 
-    <h2>How It Works</h2>
+    <!-- Screenshot: Menu Configuration -->
+    <div class="screenshot-section">
+        <h3>Workflow Configuration Menu</h3>
+        <p>Access all workflow configuration from the Settings menu. Manage Request Types, Stages, and Routes in dedicated views.</p>
+        <div class="screenshot">
+            <img src="captures/1.png" alt="Workflow Configuration Menu"/>
+            <div class="screenshot-caption">Settings > Workflow Configuration menu with Request Types, Stages, and Routes.</div>
+        </div>
+    </div>
 
-    <ol>
-        <li><strong>Create a Request Type</strong> - Go to Administration > Workflow Configuration > Request Types</li>
-        <li><strong>Design Your Workflow</strong> - Use the visual designer to create stages and connect them with routes</li>
-        <li><strong>Configure Stages</strong> - Set colors, readonly behavior, and visibility for each stage</li>
-        <li><strong>Define Routes</strong> - Set button styles, access rights, and optional server actions</li>
-        <li><strong>Inherit in Your Model</strong> - Add workflow capabilities with a simple Python inheritance</li>
+    <!-- Screenshot: Stages List -->
+    <div class="screenshot-section">
+        <h3>Stage Configuration</h3>
+        <p>Configure workflow stages with visibility, draft/done flags, colors, and more. Stages can be reordered using drag-and-drop.</p>
+        <div class="screenshot">
+            <img src="captures/9.png" alt="Stages Configuration"/>
+            <div class="screenshot-caption">Stages tab showing all workflow stages with their properties: visibility, draft status, done status, colors, and active state.</div>
+        </div>
+    </div>
+
+    <!-- Screenshot: Stage Details -->
+    <div class="screenshot-section">
+        <h3>Stage Details with Routes</h3>
+        <p>Each stage shows its incoming and outgoing routes. Configure readonly behavior using Python expressions.</p>
+        <div class="screenshot">
+            <img src="captures/4.png" alt="Stage Details"/>
+            <div class="screenshot-caption">Stage configuration showing name, type, color, visibility, and outgoing routes (Approve, Reject).</div>
+        </div>
+    </div>
+
+    <!-- Screenshot: Routes List -->
+    <div class="screenshot-section">
+        <h3>Routes Configuration</h3>
+        <p>Define all transitions between stages. Configure button styles, descriptions, server actions, and access controls.</p>
+        <div class="screenshot">
+            <img src="captures/10.png" alt="Routes Configuration"/>
+            <div class="screenshot-caption">Routes tab showing all workflow transitions with From/To stages, descriptions, button classes, and associated server actions.</div>
+        </div>
+    </div>
+
+    <!-- Screenshot: Route Details -->
+    <div class="screenshot-section">
+        <h3>Route Details with Actions</h3>
+        <p>Configure each route with allowed groups, allowed users, server actions (like opening a wizard), and button appearance.</p>
+        <div class="screenshot">
+            <img src="captures/6.png" alt="Route with Server Action"/>
+            <div class="screenshot-caption">Reject route configuration with server action "Demo: Open Reject Wizard" to capture rejection reason.</div>
+        </div>
+    </div>
+
+    <h2>Route Configuration Details</h2>
+
+    <p>Each route (transition) can be fully configured with access controls and automated actions.</p>
+
+    <div class="feature-grid">
+        <div class="feature">
+            <h3>Allowed Groups</h3>
+            <p>Restrict who can use this route by selecting specific security groups. Only users belonging to these groups will see and be able to click the button.</p>
+            <p><em>Example: Only "Sales Manager" group can approve quotes.</em></p>
+        </div>
+
+        <div class="feature">
+            <h3>Allowed Users</h3>
+            <p>For fine-grained control, specify individual users who can use this route. Useful for specific approval chains or delegation.</p>
+            <p><em>Example: Only the CEO and CFO can approve expenses over $10,000.</em></p>
+        </div>
+
+        <div class="feature">
+            <h3>Condition Visible Button</h3>
+            <p>A Python expression that determines if the button is visible. The expression has access to the record (<code>rec</code>) and environment (<code>self</code>).</p>
+            <p><em>Example: <code>rec.amount > 1000</code> - Button only shows for high amounts.</em></p>
+        </div>
+
+        <div class="feature">
+            <h3>Button Class</h3>
+            <p>Control the button appearance with Bootstrap classes:</p>
+            <ul style="margin: 5px 0; padding-left: 20px;">
+                <li><code>btn-primary</code> - Blue (main action)</li>
+                <li><code>btn-success</code> - Green (approval)</li>
+                <li><code>btn-danger</code> - Red (rejection)</li>
+                <li><code>btn-secondary</code> - Gray (reset)</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Server Actions on Routes</h2>
+
+    <p>Attach powerful server actions to routes to automate tasks when a transition occurs. Actions are executed <strong>before</strong> the stage change.</p>
+
+    <!-- Screenshot: Server Action Types -->
+    <div class="screenshot-section">
+        <h3>Available Server Action Types</h3>
+        <p>Odoo provides multiple action types that can be triggered on route transitions:</p>
+        <div class="screenshot">
+            <img src="captures/12.png" alt="Server Action Types"/>
+            <div class="screenshot-caption">Server action configuration showing all available action types for workflow automation.</div>
+        </div>
+    </div>
+
+    <div class="feature-grid">
+        <div class="feature">
+            <h3>Execute Code</h3>
+            <p>Run custom Python code. Access <code>records</code>, <code>env</code>, and return actions like opening wizards. Most flexible option.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Send Email / SMS</h3>
+            <p>Automatically send email or SMS notifications when transitioning. Use email templates with dynamic content.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Update Record</h3>
+            <p>Modify field values on the current record or related records. Set dates, update status fields, assign users, etc.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Create Activity</h3>
+            <p>Schedule follow-up activities (tasks, calls, meetings) for users when a transition occurs.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Add/Remove Followers</h3>
+            <p>Manage document followers dynamically. Add managers as followers on approval, remove on completion.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Create Record</h3>
+            <p>Create new records in any model. Generate invoices, create tasks, log entries automatically.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Send Webhook</h3>
+            <p>Send HTTP requests to external systems. Integrate with third-party applications, trigger external workflows.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Execute Existing Actions</h3>
+            <p>Chain multiple server actions together. Reuse existing actions for complex multi-step automations.</p>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <strong>Example - Open Wizard on Reject:</strong> Create a server action with "Execute Code" type to open a wizard that captures the rejection reason before completing the transition.
+    </div>
+
+    <h2>Demo Request Module</h2>
+
+    <div class="workflow-demo">
+        <p><strong>Complete demonstration included!</strong> The module ships with a <code>demo.request</code> model showcasing all features:</p>
+        <div class="workflow-stages">
+            <span class="stage stage-draft">Draft</span>
+            <span class="arrow">&rarr;</span>
+            <span class="stage stage-pending">Pending</span>
+            <span class="arrow">&rarr;</span>
+            <span class="stage stage-approved">Approved</span>
+            <span class="arrow">&rarr;</span>
+            <span class="stage stage-completed">Completed</span>
+        </div>
+        <div class="workflow-stages">
+            <span class="stage stage-pending">Pending</span>
+            <span class="arrow">&rarr;</span>
+            <span class="stage stage-rejected">Rejected</span>
+            <span class="arrow">&rarr;</span>
+            <span class="stage stage-draft">Draft</span>
+        </div>
+    </div>
+
+    <!-- Screenshot: Demo Form Draft -->
+    <div class="screenshot-section">
+        <h3>Demo Request - Draft Stage</h3>
+        <p>New requests start in Draft stage with editable fields and a "Submit" button to move to Pending.</p>
+        <div class="screenshot">
+            <img src="captures/7.png" alt="Demo Request Draft"/>
+            <div class="screenshot-caption">Demo Request form in Draft stage showing the Submit button and status pipeline indicator.</div>
+        </div>
+    </div>
+
+    <!-- Screenshot: Demo Form Pending -->
+    <div class="screenshot-section">
+        <h3>Demo Request - Pending Stage</h3>
+        <p>After submission, the request shows Approve and Reject buttons. Fields become readonly based on stage configuration.</p>
+        <div class="screenshot">
+            <img src="captures/8.png" alt="Demo Request Pending"/>
+            <div class="screenshot-caption">Demo Request in Pending stage with Approve (green) and Reject (red) action buttons.</div>
+        </div>
+    </div>
+
+    <!-- Screenshot: Reject Wizard -->
+    <div class="screenshot-section">
+        <h3>Rejection Wizard</h3>
+        <p>Routes can trigger server actions like opening a wizard. The Reject route opens a wizard to capture the rejection reason.</p>
+        <div class="screenshot">
+            <img src="captures/11.png" alt="Reject Wizard"/>
+            <div class="screenshot-caption">Rejection wizard triggered by the Reject button, requiring a reason before completing the rejection.</div>
+        </div>
+    </div>
+
+    <h2>How to Use</h2>
+
+    <ol class="steps">
+        <li>
+            <strong>Install the module</strong><br>
+            Install Workflow Base from the Apps menu. Demo data will create a sample workflow.
+        </li>
+        <li>
+            <strong>Create a Request Type</strong><br>
+            Go to Settings > Workflow Configuration > Request Types. Link it to your model.
+        </li>
+        <li>
+            <strong>Design Your Workflow</strong><br>
+            Use the visual Workflow Designer tab to create stages and connect them with routes.
+        </li>
+        <li>
+            <strong>Configure Stages</strong><br>
+            Set colors, readonly behavior (<code>{'all': True}</code>), draft/done flags, and visibility.
+        </li>
+        <li>
+            <strong>Define Routes</strong><br>
+            Configure button styles, access rights (groups/users), and optional server actions.
+        </li>
+        <li>
+            <strong>Inherit in Your Model</strong><br>
+            Add workflow capabilities with Python inheritance (see example below).
+        </li>
     </ol>
 
     <h2>Quick Start Example</h2>
 
-    <p>Add workflow capabilities to your custom model:</p>
+    <div class="info-box">
+        <strong>Tip:</strong> Add the <code>stage_route_out_widget</code> field to your form view to display action buttons, and use <code>readonly="can_readonly"</code> on fields that should lock after certain stages.
+    </div>
 
     <pre><code class="language-python">from odoo import models, fields
 
@@ -156,43 +508,66 @@ class MyRequest(models.Model):
 
     name = fields.Char(string='Name', required=True)
     description = fields.Text(string='Description')
+    requester_id = fields.Many2one('res.users', default=lambda self: self.env.user)
 
-    # The stage_id and type_id fields are inherited from request.request
-    # Add readonly attribute based on stage:
-    # &lt;field name="name" readonly="can_readonly"/&gt;
-</code></pre>
+    # Inherited from request.request:
+    # - type_id: linked Request Type
+    # - stage_id: current workflow stage
+    # - can_readonly: boolean computed from stage
+    # - stage_route_out_json: available action buttons</code></pre>
 
-    <h2>Demo Module Included</h2>
+    <p>In your XML form view:</p>
 
-    <p>
-        The module includes a complete demonstration (<code>demo.request</code>) showing:
-    </p>
+    <pre><code class="language-xml">&lt;form&gt;
+    &lt;header&gt;
+        &lt;!-- Action buttons appear here automatically --&gt;
+        &lt;field name="stage_route_out_json" widget="stage_route_out_widget"/&gt;
+        &lt;field name="stage_id" widget="statusbar" options="{'clickable': '0'}"/&gt;
+    &lt;/header&gt;
+    &lt;sheet&gt;
+        &lt;group&gt;
+            &lt;!-- Fields become readonly based on stage --&gt;
+            &lt;field name="name" readonly="can_readonly"/&gt;
+            &lt;field name="description" readonly="can_readonly"/&gt;
+        &lt;/group&gt;
+    &lt;/sheet&gt;
+    &lt;chatter/&gt;
+&lt;/form&gt;</code></pre>
 
-    <ul>
-        <li>5 workflow stages: Draft &rarr; Pending &rarr; Approved/Rejected &rarr; Completed</li>
-        <li>5 routes with different button styles (Submit, Approve, Reject, Complete, Reset)</li>
-        <li>Readonly fields after submission</li>
-        <li>Kanban view grouped by stages</li>
-        <li>Priority handling</li>
-    </ul>
+    <h2>Technical Details</h2>
+
+    <div class="feature-grid">
+        <div class="feature">
+            <h3>Models</h3>
+            <ul>
+                <li><code>request.type</code> - Workflow types</li>
+                <li><code>request.stage</code> - Workflow stages</li>
+                <li><code>request.stage.route</code> - Transitions</li>
+                <li><code>request.request</code> - Base mixin</li>
+            </ul>
+        </div>
+        <div class="feature">
+            <h3>Dependencies</h3>
+            <ul>
+                <li>base</li>
+                <li>mail (for tracking)</li>
+                <li>JointJS (included via CDN)</li>
+            </ul>
+        </div>
+    </div>
 
     <h2>Requirements</h2>
 
     <ul>
-        <li>Odoo 18.0</li>
+        <li><strong>Odoo 18.0</strong> (Community or Enterprise)</li>
         <li>Base module</li>
-        <li>Mail module (for tracking)</li>
+        <li>Mail module (for activity tracking)</li>
     </ul>
 
-    <h2>License</h2>
+    
 
-    <p>This module is licensed under LGPL-3.</p>
+ 
+    
 
-    <h2>Support</h2>
-
-    <p>
-        For issues, feature requests, or contributions, please visit our
-        <a href="https://github.com/workflow-base/workflow_base">GitHub repository</a>.
-    </p>
 </body>
 </html>
