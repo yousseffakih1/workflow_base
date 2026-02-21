@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="add_base.WorkflowGraphWidget">
+        <div class="app-container">
+            <!-- Sidebar gauche -->
+            <div class="sidebar">
+                <h3>Elements</h3>
+                <div class="stencil">
+                    <div class="element" draggable="true" data-type="state">Add State</div>
+                </div>
+            </div>
+
+            <!-- Zone centrale pour le diagramme -->
+             <div class="graph-container">
+                <div t-ref="graph" id="paper"></div>
+                
+                <!-- Message quand le graph est vide -->
+                <div class="empty-graph-message" t-if="state.isEmpty">
+                    <div class="empty-content">
+                        <i class="fa fa-sitemap fa-3x text-muted"/>
+                        <h4>Aucun workflow configuré</h4>
+                        <p>Commencez par ajouter des étapes à votre workflow en faisant glisser "Add State" sur cette zone.</p>
+                        <div class="quick-actions">
+                            <button class="btn btn-primary" t-on-click="createFirstStage">
+                                <i class="fa fa-plus"/> Créer la première étape
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contrôles de zoom et layout -->
+                <div class="zoom-controls">
+                    <button class="zoom-btn" t-on-click="zoomIn" title="Zoom In">+</button>
+                    <button class="zoom-btn" t-on-click="zoomOut" title="Zoom Out">-</button>
+                    <button class="zoom-btn" t-on-click="resetZoom" title="Reset Zoom">⌂</button>
+                    <button class="zoom-btn" t-on-click="fitToContent" title="Fit to Content">⊡</button>
+                    <button class="zoom-btn" t-on-click="autoLayout" title="Réorganiser automatiquement">⚡</button>
+                </div>
+             </div>
+          
+
+            <!-- Panel de détails à droite -->
+            <div class="details-panel">
+                <h3>Details</h3>
+                <div id="element-properties">
+                    <t t-if="state.selectedElement">
+                        <div class="element-details">
+                            <div class="detail-item">
+                                <label>Nom:</label>
+                                <span t-esc="state.selectedElementName"/>
+                            </div>
+                            <div class="detail-item">
+                                <label>Type:</label>
+                                <span t-esc="state.selectedElementType"/>
+                            </div>
+                            <div class="detail-item" t-if="state.selectedElementDetails.sequence">
+                                <label>Séquence:</label>
+                                <span t-esc="state.selectedElementDetails.sequence"/>
+                            </div>
+                            <div class="detail-item" t-if="state.selectedElementDetails.visible !== undefined">
+                                <label>Visible:</label>
+                                <span class="badge" t-att-class="state.selectedElementDetails.visible ? 'badge-success' : 'badge-secondary'">
+                                    <t t-esc="state.selectedElementDetails.visible ? 'Oui' : 'Non'"/>
+                                </span>
+                            </div>
+                            <div class="detail-item" t-if="state.selectedElementDetails.is_draft">
+                                <label>Statut:</label>
+                                <span class="badge badge-info">Brouillon</span>
+                            </div>
+                            <div class="detail-item" t-if="state.selectedElementDetails.is_done">
+                                <label>Statut:</label>
+                                <span class="badge badge-success">Terminé</span>
+                            </div>
+                            <div class="detail-item" t-if="state.selectedElementDetails.color">
+                                <label>Couleur:</label>
+                                <span class="color-indicator" t-att-style="'background-color: ' + state.selectedElementDetails.colorHex"></span>
+                                <span t-esc="state.selectedElementDetails.colorName"/>
+                            </div>
+                            <div class="detail-item" t-if="state.selectedElementDetails.position_x !== undefined">
+                                <label>Position:</label>
+                                <span t-esc="'X: ' + Math.round(state.selectedElementDetails.position_x) + ', Y: ' + Math.round(state.selectedElementDetails.position_y)"/>
+                            </div>
+                            <div class="detail-item" t-if="state.selectedElementDetails.can_readonly">
+                                <label>Lecture seule:</label>
+                                <span t-esc="state.selectedElementDetails.can_readonly"/>
+                            </div>
+                            <div class="button-group" t-if="!props.readonly">
+                                <button class="btn btn-primary btn-sm" t-on-click="editSelected">
+                                    <i class="fa fa-edit"/> Modifier
+                                </button>
+                                <button class="btn btn-danger btn-sm" t-on-click="deleteSelected">
+                                    <i class="fa fa-trash"/> Supprimer
+                                </button>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-elif="state.selectedLink">
+                        <div class="element-details">
+                            <div class="detail-item">
+                                <label>Action:</label>
+                                <span t-esc="state.selectedLinkName"/>
+                            </div>
+                            <div class="detail-item">
+                                <label>De:</label>
+                                <span t-esc="state.selectedLinkFrom"/>
+                            </div>
+                            <div class="detail-item">
+                                <label>Vers:</label>
+                                <span t-esc="state.selectedLinkTo"/>
+                            </div>
+                            <div class="detail-item" t-if="state.selectedLinkDetails.description">
+                                <label>Description:</label>
+                                <span t-esc="state.selectedLinkDetails.description"/>
+                            </div>
+                            <div class="detail-item" t-if="state.selectedLinkDetails.sequence">
+                                <label>Séquence:</label>
+                                <span t-esc="state.selectedLinkDetails.sequence"/>
+                            </div>
+                            <div class="detail-item" t-if="state.selectedLinkDetails.btn_class">
+                                <label>Style:</label>
+                                <span class="badge" t-att-class="'badge-' + state.selectedLinkDetails.btn_class.replace('btn-', '')">
+                                    <t t-esc="state.selectedLinkDetails.btn_class_name"/>
+                                </span>
+                            </div>
+                            <div class="detail-item" t-if="state.selectedLinkDetails.visible !== undefined">
+                                <label>Visible:</label>
+                                <span class="badge" t-att-class="state.selectedLinkDetails.visible ? 'badge-success' : 'badge-secondary'">
+                                    <t t-esc="state.selectedLinkDetails.visible ? 'Oui' : 'Non'"/>
+                                </span>
+                            </div>
+                            <div class="detail-item" t-if="state.selectedLinkDetails.user_group_ids">
+                                <label>Groupes autorisés:</label>
+                                <div class="groups-list">
+                                    <t t-foreach="state.selectedLinkDetails.user_group_names" t-as="group" t-key="group">
+                                        <span class="badge badge-info" t-esc="group"/>
+                                    </t>
+                                </div>
+                            </div>
+                            <div class="detail-item" t-if="state.selectedLinkDetails.require_comment !== undefined">
+                                <label>Commentaire requis:</label>
+                                <span class="badge" t-att-class="state.selectedLinkDetails.require_comment ? 'badge-warning' : 'badge-secondary'">
+                                    <t t-esc="state.selectedLinkDetails.require_comment ? 'Oui' : 'Non'"/>
+                                </span>
+                            </div>
+                            <div class="button-group" t-if="!props.readonly">
+                                <button class="btn btn-primary btn-sm" t-on-click="editSelectedLink">
+                                    <i class="fa fa-edit"/> Modifier
+                                </button>
+                                <button class="btn btn-danger btn-sm" t-on-click="deleteSelectedLink">
+                                    <i class="fa fa-trash"/> Supprimer
+                                </button>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-else="">
+                        <div class="no-selection">
+                            Sélectionnez un élément ou une route pour voir ses propriétés
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates> 

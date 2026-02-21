@@ -1,0 +1,773 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* add_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-07 12:06+0000\n"
+"PO-Revision-Date: 2025-07-07 12:06+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: add_base
+#: model_terms:ir.ui.view,arch_db:add_base.fleet_location_form
+msgid "&gt;"
+msgstr "&gt;"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_stage_route__action_id
+msgid "Action"
+msgstr "Action"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Action:"
+msgstr "Action:"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_request__active
+#: model:ir.model.fields,field_description:add_base.field_request_stage__active
+#: model:ir.model.fields,field_description:add_base.field_request_stage_route__active
+#: model:ir.model.fields,field_description:add_base.field_request_type__active
+msgid "Active"
+msgstr "Actif"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Add State"
+msgstr "Ajouter Étape"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_fleet_location__adresse
+msgid "Adresse"
+msgstr "Adresse"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_stage_route__allowed_group_ids
+msgid "Allowed groups"
+msgstr "Groupes autorisés"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_stage_route__allowed_user_ids
+msgid "Allowed users"
+msgstr "Utilisateurs autorisés"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Aucun workflow configuré"
+msgstr "Aucun workflow configuré"
+
+#. module: add_base
+#: model:ir.model,name:add_base.model_base
+msgid "Base"
+msgstr "Base"
+
+#. module: add_base
+#: model:ir.model.fields.selection,name:add_base.selection__request_stage__color__2
+msgid "Bleue"
+msgstr "Bleue"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Brouillon"
+msgstr "Brouillon"
+
+#. module: add_base
+#: model:ir.model.fields.selection,name:add_base.selection__request_stage__color__6
+msgid "Brun"
+msgstr "Brun"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_stage_route__btn_class
+msgid "Btn Class"
+msgstr "Classe du bouton"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_stage__can_readonly
+msgid "Can readonly"
+msgstr "lecture seule"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_request__can_readonly
+msgid "Can readonly boolean"
+msgstr "Lecture seule   booléenne"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_request__can_readonly_json
+msgid "Can readonly json"
+msgstr "Lecture seule  json"
+
+#. module: add_base
+#. odoo-python
+#: code:addons/add_base/models/request_request.py:0
+#: code:addons/add_base/models/request_request.py:0
+#, python-format
+msgid "Cannot move request (%(request)s) by this route (%(route)s)"
+msgstr ""
+"Impossible de déplacer la demande(%(request)s) par cette action (%(route)s)"
+
+#. module: add_base
+#: model_terms:ir.ui.view,arch_db:add_base.res_country_state_list
+msgid "Code région"
+msgstr "Code région"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_stage__color
+msgid "Coleur"
+msgstr "Couleur"
+
+#. module: add_base
+#: model:ir.actions.act_window,name:add_base.res_country_collective_action_window
+#: model:ir.model.fields,field_description:add_base.field_fleet_location__collective_id
+#: model:ir.model.fields,field_description:add_base.field_res_country_collective__name
+msgid "Collective"
+msgstr "Collectivité"
+
+#. module: add_base
+#: model:ir.ui.menu,name:add_base.res_country_collective_menu
+msgid "Collectives"
+msgstr "Collectivités"
+
+#. module: add_base
+#: model_terms:ir.ui.view,arch_db:add_base.request_stage_form
+msgid "Color"
+msgstr "Couleur"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid ""
+"Commencez par ajouter des étapes à votre workflow en faisant glisser \"Add "
+"State\" sur cette zone."
+msgstr ""
+"Commencez par ajouter des étapes à votre workflow en faisant glisser \"Ajouter "
+"Étape\" sur cette zone."
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Commentaire requis:"
+msgstr "Commentaire requis:"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_stage_route__condition_invisible
+msgid "Condition visible bouton"
+msgstr "Condition de visibilité du bouton"
+
+#. module: add_base
+#: model:ir.ui.menu,name:add_base.technique_config_menu
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.js:0
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.js:0
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.js:0
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.js:0
+#, python-format
+msgid "Confirmation"
+msgstr "Confirmation"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Couleur:"
+msgstr "Couleur:"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_fleet_location__create_uid
+#: model:ir.model.fields,field_description:add_base.field_request_request__create_uid
+#: model:ir.model.fields,field_description:add_base.field_request_stage__create_uid
+#: model:ir.model.fields,field_description:add_base.field_request_stage_route__create_uid
+#: model:ir.model.fields,field_description:add_base.field_request_type__create_uid
+#: model:ir.model.fields,field_description:add_base.field_res_country_collective__create_uid
+#: model:ir.model.fields,field_description:add_base.field_res_country_province__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_fleet_location__create_date
+#: model:ir.model.fields,field_description:add_base.field_request_request__create_date
+#: model:ir.model.fields,field_description:add_base.field_request_stage__create_date
+#: model:ir.model.fields,field_description:add_base.field_request_stage_route__create_date
+#: model:ir.model.fields,field_description:add_base.field_request_type__create_date
+#: model:ir.model.fields,field_description:add_base.field_res_country_collective__create_date
+#: model:ir.model.fields,field_description:add_base.field_res_country_province__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Créer la première étape"
+msgstr "Créer la première étape"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "De:"
+msgstr "De:"
+
+#. module: add_base
+#: model:ir.actions.act_window,name:add_base.request_requestn_action_window
+#: model:ir.ui.menu,name:add_base.request_reques_menu
+msgid "Demande"
+msgstr "Demande"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_stage_route__description
+msgid "Description"
+msgstr "Description"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Description:"
+msgstr "Description:"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Details"
+msgstr "Détails"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_fleet_location__display_name
+#: model:ir.model.fields,field_description:add_base.field_request_request__display_name
+#: model:ir.model.fields,field_description:add_base.field_request_stage__display_name
+#: model:ir.model.fields,field_description:add_base.field_request_stage_route__display_name
+#: model:ir.model.fields,field_description:add_base.field_request_type__display_name
+#: model:ir.model.fields,field_description:add_base.field_res_country_collective__display_name
+#: model:ir.model.fields,field_description:add_base.field_res_country_province__display_name
+msgid "Display Name"
+msgstr "Nom d’affichage"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Elements"
+msgstr "Éléments"
+
+#. module: add_base
+#: model:ir.actions.act_window,name:add_base.fleet_location_action_window
+#: model:ir.model.fields,field_description:add_base.field_fleet_location__name
+#: model:ir.ui.menu,name:add_base.fleet_location_menu
+msgid "Emplacement"
+msgstr "Emplacement"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.js:0
+#, python-format
+msgid "Erreur lors de la création de l'état : "
+msgstr "Erreur lors de la création de l'état : "
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.js:0
+#, python-format
+msgid "Erreur lors de la suppression : "
+msgstr "Erreur lors de la suppression : "
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.js:0
+#, python-format
+msgid "Erreur lors de la suppression de la route : "
+msgstr "Erreur lors de la suppression de la route : "
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_stage__is_draft
+msgid "Est Brouillon"
+msgstr "Est Brouillon"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_stage__is_done
+msgid "Est terminer"
+msgstr "Est terminé"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Fit to Content"
+msgstr "Ajuster au contenu"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_stage_route__stage_from_id
+msgid "From"
+msgstr "Depuis"
+
+#. module: add_base
+#: model:ir.model.fields.selection,name:add_base.selection__request_stage__color__3
+msgid "Grise"
+msgstr "Grise"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Groupes autorisés:"
+msgstr "Groupes autorisés:"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_fleet_location__id
+#: model:ir.model.fields,field_description:add_base.field_request_request__id
+#: model:ir.model.fields,field_description:add_base.field_request_stage__id
+#: model:ir.model.fields,field_description:add_base.field_request_stage_route__id
+#: model:ir.model.fields,field_description:add_base.field_request_type__id
+#: model:ir.model.fields,field_description:add_base.field_res_country_collective__id
+#: model:ir.model.fields,field_description:add_base.field_res_country_province__id
+msgid "ID"
+msgstr "ID"
+
+#. module: add_base
+#: model:ir.model.fields,help:add_base.field_request_stage_route__allowed_user_ids
+msgid ""
+"If the field is empty, then the restrictions are not applied. If the field "
+"is filled, only the specified users will be abble to move the request along "
+"this route."
+msgstr ""
+"Si le champ est vide, les restrictions ne sont pas appliquées. Si le champ "
+"est rempli, seuls les utilisateurs spécifiés pourront déplacer la requête le"
+" long de cet itinéraire."
+
+#. module: add_base
+#: model:ir.model.fields,help:add_base.field_request_stage_route__allowed_group_ids
+msgid ""
+"If the field is empty, then the restrictions are not applied. If the field "
+"is filled, only users belonging to any of the specified groups will be able "
+"to move the request along this route."
+msgstr ""
+"Si le champ est vide, les restrictions ne sont pas appliquées. Si le champ "
+"est rempli, seuls les utilisateurs appartenant à l’un des groupes spécifiés "
+"pourront déplacer la demande le long de cet itinéraire."
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.js:0
+#, python-format
+msgid "Impossible de créer l'état : aucun type de requête sélectionné."
+msgstr "Impossible de créer l'état : aucun type de requête sélectionné."
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_stage__route_in_ids
+#: model_terms:ir.ui.view,arch_db:add_base.request_stage_form
+msgid "Incoming routes"
+msgstr "Actions entrants"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_fleet_location__write_uid
+#: model:ir.model.fields,field_description:add_base.field_request_request__write_uid
+#: model:ir.model.fields,field_description:add_base.field_request_stage__write_uid
+#: model:ir.model.fields,field_description:add_base.field_request_stage_route__write_uid
+#: model:ir.model.fields,field_description:add_base.field_request_type__write_uid
+#: model:ir.model.fields,field_description:add_base.field_res_country_collective__write_uid
+#: model:ir.model.fields,field_description:add_base.field_res_country_province__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_fleet_location__write_date
+#: model:ir.model.fields,field_description:add_base.field_request_request__write_date
+#: model:ir.model.fields,field_description:add_base.field_request_stage__write_date
+#: model:ir.model.fields,field_description:add_base.field_request_stage_route__write_date
+#: model:ir.model.fields,field_description:add_base.field_request_type__write_date
+#: model:ir.model.fields,field_description:add_base.field_res_country_collective__write_date
+#: model:ir.model.fields,field_description:add_base.field_res_country_province__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_fleet_location__latitude
+msgid "Latitude"
+msgstr "Latitude"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Lecture seule:"
+msgstr "Lecture seule:"
+
+#. module: add_base
+#: model_terms:ir.ui.view,arch_db:add_base.fleet_location_form
+#: model_terms:ir.ui.view,arch_db:add_base.request_request_form
+msgid "Location"
+msgstr "Emplacement"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_fleet_location__longitude
+msgid "Longitude"
+msgstr "Longitude"
+
+#. module: add_base
+#: model:res.groups,name:add_base.group_hr_employee_manager
+msgid "Manager"
+msgstr "Gestionnaire"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_stage_route__model_id
+msgid "Model"
+msgstr "Modèle"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Modifier"
+msgstr "Modifier"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_type__model_id
+msgid "Modèle"
+msgstr "Modèle"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_stage__name
+#: model:ir.model.fields,field_description:add_base.field_request_stage_route__name
+#: model:ir.model.fields,field_description:add_base.field_request_type__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Nom:"
+msgstr "Nom:"
+
+#. module: add_base
+#: model:ir.model.fields.selection,name:add_base.selection__request_stage__color__0
+msgid "Non"
+msgstr "Non"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_stage__route_out_ids
+#: model_terms:ir.ui.view,arch_db:add_base.request_stage_form
+msgid "Outgoing routes"
+msgstr "Actions sortants"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_stage__position_x
+msgid "Position X"
+msgstr ""
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_stage__position_y
+msgid "Position Y"
+msgstr ""
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Position:"
+msgstr "Position:"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_fleet_location__province_id
+#: model:ir.model.fields,field_description:add_base.field_res_country_collective__province_id
+#: model:ir.model.fields,field_description:add_base.field_res_country_province__name
+msgid "Province"
+msgstr "Province"
+
+#. module: add_base
+#: model:ir.actions.act_window,name:add_base.res_country_province_action_window
+#: model:ir.ui.menu,name:add_base.res_country_province_menu
+msgid "Provinces"
+msgstr "Provinces"
+
+#. module: add_base
+#: model:ir.model,name:add_base.model_request_stage
+msgid "Request Stage"
+msgstr "Étape de la demande"
+
+#. module: add_base
+#: model:ir.model,name:add_base.model_request_stage_route
+msgid "Request Stage Route"
+msgstr "Action d’étape"
+
+#. module: add_base
+#: model:ir.model,name:add_base.model_request_type
+#: model:ir.ui.menu,name:add_base.request_type_menu
+msgid "Request Type"
+msgstr "Type de demande"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Reset Zoom"
+msgstr "Réinitialiser le zoom"
+
+#. module: add_base
+#: model:ir.model.fields.selection,name:add_base.selection__request_stage__color__1
+msgid "Rouge"
+msgstr "Rouge"
+
+#. module: add_base
+#: model:ir.actions.act_window,name:add_base.request_stage_route_action_window
+#: model:ir.ui.menu,name:add_base.request_stage_route_menu
+msgid "Rout"
+msgstr "Action"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_type__route_ids
+#: model_terms:ir.ui.view,arch_db:add_base.request_type_form_view
+msgid "Routes"
+msgstr "Actions"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_fleet_location__state_id
+#: model:ir.model.fields,field_description:add_base.field_res_country_collective__state_id
+#: model:ir.model.fields,field_description:add_base.field_res_country_province__state_id
+#: model_terms:ir.ui.view,arch_db:add_base.res_country_state_list
+msgid "Région"
+msgstr ""
+
+#. module: add_base
+#: model:ir.actions.act_window,name:add_base.res_countrystate_action_window
+#: model:ir.ui.menu,name:add_base.res_country_state_menu
+msgid "Régions"
+msgstr ""
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Réorganiser automatiquement"
+msgstr "Réorganiser automatiquement"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_stage__sequence
+#: model:ir.model.fields,field_description:add_base.field_request_stage_route__sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: add_base
+#: model:ir.actions.act_window,name:add_base.request_stage_action_window
+#: model:ir.ui.menu,name:add_base.request_stage_menu
+msgid "Stage"
+msgstr "Étape"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_request__stage_route_out_json
+msgid "Stage Route Out Json"
+msgstr "Action de l’étape de sortie Json"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_type__stage_ids
+#: model_terms:ir.ui.view,arch_db:add_base.request_type_form_view
+msgid "Stages"
+msgstr "Étapes"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Statut:"
+msgstr ""
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Style:"
+msgstr ""
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Supprimer"
+msgstr ""
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Sélectionnez un élément ou une route pour voir ses propriétés"
+msgstr "Sélectionnez un élément ou une action pour voir ses propriétés"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Séquence:"
+msgstr ""
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Terminé"
+msgstr ""
+
+#. module: add_base
+#. odoo-python
+#: code:addons/add_base/models/request_stage_route.py:0
+#: code:addons/add_base/models/request_stage_route.py:0
+#, python-format
+msgid ""
+"This stage change '%(route)s' restricted by access rights.\n"
+"Request: %(request)s\n"
+msgstr ""
+"Ce changement d’étape ‘%(route)s’ restreint par les droits d’accès.\n"
+"Request: %(request)s\n"
+"Demande\n"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_stage_route__stage_to_id
+msgid "To"
+msgstr "À"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_stage__type_id
+#: model:ir.model.fields,field_description:add_base.field_request_stage_route__type_id
+msgid "Type"
+msgstr "Type"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_request__type_id
+msgid "Type stage"
+msgstr "Type d'étape"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Type:"
+msgstr "Type:"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Vers:"
+msgstr "Vers:"
+
+#. module: add_base
+#: model:ir.model.fields.selection,name:add_base.selection__request_stage__color__5
+msgid "Verte"
+msgstr "Verte"
+
+#. module: add_base
+#: model:ir.model.fields.selection,name:add_base.selection__request_stage__color__4
+msgid "Violette"
+msgstr "Violette"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_stage__visible
+msgid "Visible"
+msgstr "Visible"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Visible:"
+msgstr "Visible:"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.js:0
+#, python-format
+msgid "Voulez-vous vraiment supprimer cet état ?"
+msgstr "Voulez-vous vraiment supprimer cette étape ?"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.js:0
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.js:0
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.js:0
+#, python-format
+msgid "Voulez-vous vraiment supprimer cette route ?"
+msgstr "Voulez-vous vraiment supprimer cette action ?"
+
+#. module: add_base
+#: model_terms:ir.ui.view,arch_db:add_base.request_type_form_view
+msgid "Workflow Designer"
+msgstr "Concepteur de workflow"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_type__workflow_graph
+msgid "Workflow Graph"
+msgstr "Graphique de workflow"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Zoom In"
+msgstr "Zoom avant"
+
+#. module: add_base
+#. odoo-javascript
+#: code:addons/add_base/static/src/js/workflow_graph/workflow_graph.xml:0
+#, python-format
+msgid "Zoom Out"
+msgstr "Zoom arrière"
+
+#. module: add_base
+#: model:ir.model,name:add_base.model_fleet_location
+msgid "fleet.location"
+msgstr "fleet.location"
+
+#. module: add_base
+#: model:ir.actions.act_window,name:add_base.request_type_action_window
+msgid "request Type"
+msgstr "Type de demande"
+
+#. module: add_base
+#: model:ir.model,name:add_base.model_request_request
+msgid "request.request"
+msgstr "request.request"
+
+#. module: add_base
+#: model:ir.model,name:add_base.model_res_country_collective
+msgid "res.country.collective"
+msgstr "res.country.collective"
+
+#. module: add_base
+#: model:ir.model,name:add_base.model_res_country_province
+msgid "res.country.province"
+msgstr "res.country.province"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_request__stage_id
+msgid "État"
+msgstr "Étape"
+
+#. module: add_base
+#: model:ir.model.fields,field_description:add_base.field_request_request__stage_id_color
+msgid "État coleur"
+msgstr "Couleur de l'étape"

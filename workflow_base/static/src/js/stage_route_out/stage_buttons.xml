@@ -1,0 +1,13 @@
+<templates>
+    <span t-name="add_base.stage_buttons" class="stage_route_out_span_wrapper" style="gap: 0px 9px; display: flex; margin-left: 4px;">
+         <t t-foreach="state.value_json.routes" t-as="route" t-key="route.id">
+             <!--                        btn-{{ route.btn_style == 'default' ? 'primary' : route.btn_style }}-->
+
+               <button
+                    t-attf-class="btn {{ route.btn_class }}"
+                    t-on-click.prevent="() => this._onButtonClick(route.id)">
+                <t t-esc="route.name"/>
+            </button>
+        </t>
+    </span>
+</templates>

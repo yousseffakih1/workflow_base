@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="res_country_state_list">
+            <field name="name">res.country.state.tree</field>
+            <field name="model">res.country.state</field>
+            <field name="arch" type="xml">
+                <list editable="bottom">
+                     <field name="name" string="Région"/>
+                     <field name="code" string="Code région"/>
+                     <field name="country_id" options="{'no_create': True, 'no_open': True}" domain="[('code','=','MA')]"/>
+                </list>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="res_countrystate_action_window">
+            <field name="name">Régions</field>
+            <field name="res_model">res.country.state</field>
+            <field name="view_mode">list</field>
+            <field name="domain">[('country_id.code','=','MA')]</field>
+        </record>
+
+         <record id="res_countrystate_action_window_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">list</field>
+            <field name="view_id" ref="res_country_state_list"/>
+            <field name="act_window_id" ref="res_countrystate_action_window"/>
+        </record>
+<!--
+        <menuitem name="Régions" id="res_country_state_menu"
+                  parent="patrimoine_imm_configuration_menu"  action="res_countrystate_action_window"/>-->
+    </data>
+</odoo>

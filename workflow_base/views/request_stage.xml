@@ -1,0 +1,62 @@
+<odoo>
+    <data>
+         <record model="ir.ui.view" id="request_stage_tree">
+            <field name="name">request.stage.tree</field>
+            <field name="model">request.stage</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="sequence" widget="handle"/>
+                      <field name="name" />
+                      <field name="type_id" />
+                      <field name="route_in_ids"   widget="many2many_tags"/>
+                     <field name="route_out_ids"   widget="many2many_tags"/>
+                </list>
+            </field>
+         </record>
+         <record model="ir.ui.view" id="request_stage_form">
+            <field name="name">request.stage.form</field>
+            <field name="model">request.stage</field>
+            <field name="arch" type="xml">
+                <form  >
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                                <field name="type_id" />
+                                 <field name="color"   string="Color"/>
+                                 <field name="active" widget="boolean_toggle" />
+                        </group>
+                        <group>
+
+                              <field name="can_readonly" widget="code" options="{'mode': 'python'}" />
+                               <field name="visible"   />
+                             <field name="is_draft"   />
+                             <field name="is_done"   />
+                        </group>
+
+
+                    </group>
+                         <notebook>
+                            <page string="Incoming routes" >
+                                  <field name="route_in_ids"    />
+                            </page>
+                             <page string="Outgoing routes" >
+                                  <field name="route_out_ids"    />
+                            </page>
+                         </notebook>
+                </sheet>
+                </form>
+            </field>
+         </record>
+
+<record model="ir.actions.act_window" id="request_stage_action_window">
+            <field name="name">Stage</field>
+            <field name="res_model">request.stage</field>
+            <field name="view_mode">list,form</field>
+            <field name="context">{'group_by': 'type_id'}</field>
+        </record>
+         <menuitem name="Stage" id="request_stage_menu" parent="technique_config_menu" sequence="12"
+                  action="request_stage_action_window"
+        />
+    </data>
+</odoo>

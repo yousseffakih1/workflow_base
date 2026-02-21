@@ -1,0 +1,25 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="res_country_collective_list">
+            <field name="name">res.country.collective.tree</field>
+            <field name="model">res.country.collective</field>
+            <field name="arch" type="xml">
+                <list editable="bottom">
+                     <field name="name"/>
+                     <field name="state_id"/>  <!-- domain="[('country_id.code','=','MA')]" -->
+                     <field name="province_id" domain="[('state_id','=',state_id)]"/>
+                </list>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="res_country_collective_action_window">
+            <field name="name">Collective</field>
+            <field name="res_model">res.country.collective</field>
+            <field name="view_mode">list</field>
+        </record>
+
+
+     <!--   <menuitem name="Collectives" id="res_country_collective_menu"
+                  parent="patrimoine_imm_configuration_menu"  action="res_country_collective_action_window"/>-->
+    </data>
+</odoo>

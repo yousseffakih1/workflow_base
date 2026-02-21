@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <menuitem name="Configuration" id="technique_config_menu"
+                  parent="base.menu_administration"   />
+       <menuitem name="Collectives" id="res_country_collective_menu"
+                  parent="technique_config_menu"  action="res_country_collective_action_window"/>
+     <menuitem name="Provinces" id="res_country_province_menu"
+                  parent="technique_config_menu"  action="res_country_province_action_window"/>
+        <menuitem name="Régions" id="res_country_state_menu"
+                  parent="technique_config_menu"  action="res_countrystate_action_window"/>
+
+         <menuitem name="Emplacement" id="fleet_location_menu" parent="technique_config_menu" sequence="12"
+                  action="fleet_location_action_window"
+        />
+    </data>
+</odoo>

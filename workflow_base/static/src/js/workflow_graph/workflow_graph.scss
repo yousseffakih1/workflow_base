@@ -1,0 +1,407 @@
+.app-container {
+    display: flex;
+    height: calc(100vh - 150px);
+    min-height: 600px;
+    background: #fff;
+}
+.o_field_workflow_graph{
+    width: 100%;
+}
+.sidebar {
+    width: 200px;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    background: #f8f9fa;
+    flex-shrink: 0;
+
+    h3 {
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .element {
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        cursor: move;
+        text-align: center;
+        transition: all 0.2s ease;
+
+        &:hover {
+            background: #f8f9fa;
+            border-color: #007bff;
+            transform: translateY(-1px);
+        }
+    }
+}
+
+.graph-container {
+    flex: 1;
+    background: #f8f9fa;
+    position: relative;
+    overflow: auto;
+    min-width: 800px;
+    min-height: 600px;
+}
+
+#paper {
+    width: 2000px;
+    height: 1500px;
+    position: relative;
+    cursor: grab;
+    min-width: 100%;
+    min-height: 100%;
+    
+    &:active {
+        cursor: grabbing;
+    }
+
+    .joint-paper {
+        width: 100% !important;
+        height: 100% !important;
+        background-image: 
+            linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+        background-size: 20px 20px;
+        cursor: grab;
+        
+        &:active {
+            cursor: grabbing;
+        }
+
+        // Styles pour les ports de connexion
+        .joint-port {
+            transition: all 0.2s ease;
+            
+            &:hover {
+                opacity: 1 !important;
+                fill: #e74c3c !important;
+                stroke: #c0392b !important;
+                transform: scale(1.3);
+            }
+        }
+
+        .joint-link {
+            .connection {
+                stroke: #666;
+                stroke-width: 2;
+                stroke-dasharray: 5 3;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                animation: flowLine 2s linear infinite;
+                transition: all 0.3s ease;
+                filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+            }
+
+            .marker-source, .marker-target {
+                fill: #666;
+                stroke: #666;
+                animation: markerPulse 2s ease-in-out infinite;
+                filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+            }
+
+            &:hover {
+                .connection {
+                    stroke: #007bff;
+                    stroke-width: 3;
+                    animation: flowLineFast 0.8s linear infinite, glow 1.5s ease-in-out infinite alternate;
+                    filter: drop-shadow(0 2px 4px rgba(0,123,255,0.3));
+                }
+
+                .marker-source, .marker-target {
+                    fill: #007bff;
+                    stroke: #007bff;
+                    animation: markerPulse 1s ease-in-out infinite, arrowBounce 0.6s ease-in-out infinite;
+                }
+            }
+
+            // Animation spéciale pour les nouveaux liens
+            &.new-link {
+                .connection {
+                    stroke: #28a745;
+                    animation: flowLine 1s linear infinite, newLinkGlow 2s ease-in-out;
+                }
+                
+                .marker-source, .marker-target {
+                    fill: #28a745;
+                    stroke: #28a745;
+                    animation: newLinkPulse 0.5s ease-in-out 3;
+                }
+            }
+        }
+    }
+}
+
+.details-panel {
+    width: 250px;
+    padding: 20px;
+    border-left: 1px solid #ddd;
+    background: #f8f9fa;
+    flex-shrink: 0;
+
+    h3 {
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .no-selection {
+        color: #666;
+        font-style: italic;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .element-details {
+        padding: 15px;
+
+        .detail-item {
+            margin-bottom: 15px;
+            
+            label {
+                font-weight: 600;
+                color: #495057;
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            span {
+                color: #333;
+                font-size: 14px;
+            }
+        }
+
+        .button-group {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+
+            button {
+                flex: 1;
+                padding: 6px 12px;
+
+                i {
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        // Styles pour les badges
+        .badge {
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            
+            &.badge-success {
+                background-color: #d4edda;
+                color: #155724;
+            }
+            
+            &.badge-secondary {
+                background-color: #e2e3e5;
+                color: #383d41;
+            }
+            
+            &.badge-info {
+                background-color: #d1ecf1;
+                color: #0c5460;
+            }
+            
+            &.badge-warning {
+                background-color: #fff3cd;
+                color: #856404;
+            }
+            
+            &.badge-primary {
+                background-color: #d1ecf1;
+                color: #004085;
+            }
+            
+            &.badge-danger {
+                background-color: #f8d7da;
+                color: #721c24;
+            }
+        }
+
+        // Indicateur de couleur
+        .color-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 5px;
+            border: 1px solid #ddd;
+            vertical-align: middle;
+        }
+
+        // Liste des groupes
+        .groups-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 5px;
+            
+            .badge {
+                margin: 0;
+            }
+        }
+    }
+}
+
+// Animation de base pour le flux
+@keyframes flowLine {
+    to {
+        stroke-dashoffset: -8;
+    }
+}
+
+// Animation rapide au survol
+@keyframes flowLineFast {
+    to {
+        stroke-dashoffset: -8;
+    }
+}
+
+// Pulsation des marqueurs
+@keyframes markerPulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+// Effet de lueur au survol
+@keyframes glow {
+    0% {
+        filter: drop-shadow(0 2px 4px rgba(0,123,255,0.3));
+    }
+    100% {
+        filter: drop-shadow(0 4px 8px rgba(0,123,255,0.6));
+    }
+}
+
+// Rebond des flèches au survol
+@keyframes arrowBounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+// Animation pour nouveaux liens
+@keyframes newLinkGlow {
+    0% {
+        filter: drop-shadow(0 2px 8px rgba(40,167,69,0.8));
+        stroke-width: 3;
+    }
+    50% {
+        filter: drop-shadow(0 4px 12px rgba(40,167,69,1));
+        stroke-width: 4;
+    }
+    100% {
+        filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+        stroke-width: 2;
+    }
+}
+
+// Pulsation spéciale pour nouveaux liens
+@keyframes newLinkPulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+// Animation de particules pour les liens actifs
+@keyframes particleFlow {
+    0% {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+}
+
+// Contrôles de zoom
+.zoom-controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1000;
+
+    .zoom-btn {
+        width: 32px;
+        height: 32px;
+        border: 1px solid #ddd;
+        background: white;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 16px;
+        color: #666;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: all 0.2s ease;
+
+        &:hover {
+            background: #f8f9fa;
+            border-color: #007bff;
+            color: #007bff;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        &:active {
+            transform: translateY(0);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        // Style spécial pour le bouton auto-layout
+        &[title="Réorganiser automatiquement"] {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: #667eea;
+
+            &:hover {
+                background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+                border-color: #5a6fd8;
+                color: white;
+            }
+        }
+    }
+}

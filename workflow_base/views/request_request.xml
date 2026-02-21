@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="request_request_form">
+            <field name="name">request.request.form</field>
+            <field name="model">request.request</field>
+            <field name="arch" type="xml">
+                <form string="Location">
+                    <header>
+                    <div class="stage_route_out_wrapper">
+                        <field name="stage_route_out_json"  widget="stage_route_out_widget"/>
+<!--                        widget="stage_route_out_widget"-->
+                    </div>
+                    <field name="stage_id" widget="statusbar"
+                           required="0"
+                           readonly="1"
+
+                           domain="[('id', '=', stage_id)]"/>
+                </header>
+                    <sheet>
+                    <group>
+                        <field name="stage_id" />
+                    </group>
+
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+
+
+        <record model="ir.actions.act_window" id="request_requestn_action_window">
+            <field name="name">Demande</field>
+            <field name="res_model">request.request</field>
+            <field name="view_mode">list,form</field>
+        </record>
+         <menuitem name="Demande" id="request_reques_menu" parent="technique_config_menu" sequence="12"
+                  action="request_requestn_action_window"
+        />
+
+
+
+
+    </data>
+</odoo>
