@@ -54,7 +54,7 @@ DEMO WORKFLOW
 * Kanban view with stage grouping
     """,
 
-    'author': "Workflow Base Contributors",
+    'author': "Sappinov",
     'website': "https://github.com/workflow-base/workflow_base",
     'license': 'LGPL-3',
 
