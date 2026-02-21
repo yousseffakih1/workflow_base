@@ -5,10 +5,10 @@
     'summary': "Visual workflow builder with drag & drop designer - Create approval workflows, stages & routes",
 
     'description': """
-Workflow Base - Visual Workflow Builder for Odoo 18
+Workflow Base - Visual Workflow Builder for Odoo 19
 ====================================================
 
-A powerful and flexible visual workflow management system for Odoo 18.
+A powerful and flexible visual workflow management system for Odoo 19.
 Design complex approval workflows with an intuitive drag-and-drop interface.
 
 KEY FEATURES
@@ -54,12 +54,12 @@ DEMO WORKFLOW
 * Kanban view with stage grouping
     """,
 
-    'author': "Workflow Base Contributors",
+    'author': "Sappinov",
     'website': "https://github.com/workflow-base/workflow_base",
     'license': 'LGPL-3',
 
     'category': 'Technical',
-    'version': '18.0.1.0.1',
+    'version': '19.0.1.0.0',
 
     'price': 100,
     'currency': 'EUR',
