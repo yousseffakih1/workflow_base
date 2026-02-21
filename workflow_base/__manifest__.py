@@ -61,6 +61,9 @@ DEMO WORKFLOW
     'category': 'Technical',
     'version': '18.0.1.0.1',
 
+    'price': 100,
+    'currency': 'EUR',
+
     'images': [
         'static/description/captures/2.png',
         'static/description/captures/12.png',
