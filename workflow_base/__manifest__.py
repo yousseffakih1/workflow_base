@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Workflow Base",
+    'name': "Approval Workflow Engine - BPM Process Designer",
 
-    'summary': "Visual workflow builder with drag & drop designer - Create approval workflows, stages & routes",
+    'summary': "Approval workflow, BPM, state machine, process automation, visual designer, stages & transitions",
 
     'description': """
 Workflow Base - Visual Workflow Builder for Odoo 18
