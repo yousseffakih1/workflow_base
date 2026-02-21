@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Request Type for Demo -->
+        <record id="demo_request_type" model="request.type">
+            <field name="name">Demo Workflow</field>
+            <field name="model_id" ref="model_demo_request"/>
+        </record>
+
+        <!-- Stage 1: Draft (Brouillon) -->
+        <record id="demo_stage_draft" model="request.stage">
+            <field name="name">Draft</field>
+            <field name="sequence">1</field>
+            <field name="type_id" ref="demo_request_type"/>
+            <field name="color">0</field>
+            <field name="is_draft">True</field>
+            <field name="is_done">False</field>
+            <field name="visible">True</field>
+            <field name="can_readonly">{}</field>
+            <field name="position_x">100</field>
+            <field name="position_y">100</field>
+        </record>
+
+        <!-- Stage 2: Pending (En attente) -->
+        <record id="demo_stage_pending" model="request.stage">
+            <field name="name">Pending</field>
+            <field name="sequence">2</field>
+            <field name="type_id" ref="demo_request_type"/>
+            <field name="color">2</field>
+            <field name="is_draft">False</field>
+            <field name="is_done">False</field>
+            <field name="visible">True</field>
+            <field name="can_readonly">{'all': True}</field>
+            <field name="position_x">400</field>
+            <field name="position_y">100</field>
+        </record>
+
+        <!-- Stage 3: Approved (Approuvé) -->
+        <record id="demo_stage_approved" model="request.stage">
+            <field name="name">Approved</field>
+            <field name="sequence">3</field>
+            <field name="type_id" ref="demo_request_type"/>
+            <field name="color">5</field>
+            <field name="is_draft">False</field>
+            <field name="is_done">False</field>
+            <field name="visible">True</field>
+            <field name="can_readonly">{'all': True}</field>
+            <field name="position_x">700</field>
+            <field name="position_y">50</field>
+        </record>
+
+        <!-- Stage 4: Rejected (Rejeté) -->
+        <record id="demo_stage_rejected" model="request.stage">
+            <field name="name">Rejected</field>
+            <field name="sequence">4</field>
+            <field name="type_id" ref="demo_request_type"/>
+            <field name="color">1</field>
+            <field name="is_draft">False</field>
+            <field name="is_done">True</field>
+            <field name="visible">True</field>
+            <field name="can_readonly">{'all': True}</field>
+            <field name="position_x">700</field>
+            <field name="position_y">200</field>
+        </record>
+
+        <!-- Stage 5: Completed (Terminé) -->
+        <record id="demo_stage_completed" model="request.stage">
+            <field name="name">Completed</field>
+            <field name="sequence">5</field>
+            <field name="type_id" ref="demo_request_type"/>
+            <field name="color">5</field>
+            <field name="is_draft">False</field>
+            <field name="is_done">True</field>
+            <field name="visible">True</field>
+            <field name="can_readonly">{'all': True}</field>
+            <field name="position_x">1000</field>
+            <field name="position_y">50</field>
+        </record>
+
+        <!-- Server Action for Rejection Wizard -->
+        <record id="demo_reject_server_action" model="ir.actions.server">
+            <field name="name">Demo: Open Reject Wizard</field>
+            <field name="model_id" ref="model_demo_request"/>
+            <field name="state">code</field>
+            <field name="code"><![CDATA[
+if records:
+    action = {
+        'name': 'Reject Request',
+        'type': 'ir.actions.act_window',
+        'res_model': 'demo.reject.wizard',
+        'view_mode': 'form',
+        'target': 'new',
+        'context': {
+            'default_demo_request_id': records[0].id,
+        }
+    }
+]]></field>
+        </record>
+
+        <!-- Route 1: Draft -> Pending (Submit) -->
+        <record id="demo_route_submit" model="request.stage.route">
+            <field name="name">Submit</field>
+            <field name="description">Submit request for approval</field>
+            <field name="sequence">1</field>
+            <field name="type_id" ref="demo_request_type"/>
+            <field name="stage_from_id" ref="demo_stage_draft"/>
+            <field name="stage_to_id" ref="demo_stage_pending"/>
+            <field name="btn_class">btn-primary</field>
+        </record>
+
+        <!-- Route 2: Pending -> Approved (Approve) -->
+        <record id="demo_route_approve" model="request.stage.route">
+            <field name="name">Approve</field>
+            <field name="description">Approve the request</field>
+            <field name="sequence">2</field>
+            <field name="type_id" ref="demo_request_type"/>
+            <field name="stage_from_id" ref="demo_stage_pending"/>
+            <field name="stage_to_id" ref="demo_stage_approved"/>
+            <field name="btn_class">btn-success</field>
+        </record>
+
+        <!-- Route 3: Pending -> Rejected (Reject) - Uses wizard -->
+        <record id="demo_route_reject" model="request.stage.route">
+            <field name="name">Reject</field>
+            <field name="description">Reject the request</field>
+            <field name="sequence">3</field>
+            <field name="type_id" ref="demo_request_type"/>
+            <field name="stage_from_id" ref="demo_stage_pending"/>
+            <field name="stage_to_id" ref="demo_stage_rejected"/>
+            <field name="btn_class">btn-danger</field>
+            <field name="action_id" ref="demo_reject_server_action"/>
+        </record>
+
+        <!-- Route 4: Approved -> Completed (Complete) -->
+        <record id="demo_route_complete" model="request.stage.route">
+            <field name="name">Complete</field>
+            <field name="description">Mark as completed</field>
+            <field name="sequence">4</field>
+            <field name="type_id" ref="demo_request_type"/>
+            <field name="stage_from_id" ref="demo_stage_approved"/>
+            <field name="stage_to_id" ref="demo_stage_completed"/>
+            <field name="btn_class">btn-success</field>
+        </record>
+
+        <!-- Route 5: Rejected -> Draft (Reset to Draft) -->
+        <record id="demo_route_reset" model="request.stage.route">
+            <field name="name">Reset to Draft</field>
+            <field name="description">Reset request to draft status</field>
+            <field name="sequence">5</field>
+            <field name="type_id" ref="demo_request_type"/>
+            <field name="stage_from_id" ref="demo_stage_rejected"/>
+            <field name="stage_to_id" ref="demo_stage_draft"/>
+            <field name="btn_class">btn-secondary</field>
+        </record>
+
+    </data>
+</odoo>

@@ -29,14 +29,6 @@
 
 
 
-        <record model="ir.actions.act_window" id="request_requestn_action_window">
-            <field name="name">Demande</field>
-            <field name="res_model">request.request</field>
-            <field name="view_mode">list,form</field>
-        </record>
-         <menuitem name="Demande" id="request_reques_menu" parent="technique_config_menu" sequence="12"
-                  action="request_requestn_action_window"
-        />
 
 
 

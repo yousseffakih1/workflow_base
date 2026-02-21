@@ -58,14 +58,11 @@
          </record>
 
    <record model="ir.actions.act_window" id="request_stage_route_action_window">
-            <field name="name">Rout</field>
+            <field name="name">Routes</field>
             <field name="res_model">request.stage.route</field>
             <field name="view_mode">list,form</field>
             <field name="context">{'group_by': 'type_id'}</field>
         </record>
-         <menuitem name="Rout" id="request_stage_route_menu" parent="technique_config_menu" sequence="12"
-                  action="request_stage_route_action_window"
-        />
 
     </data>
 </odoo>

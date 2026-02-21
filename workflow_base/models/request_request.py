@@ -68,11 +68,9 @@ class RequestRequest(models.Model):
                 #     })
 
                 rec.can_readonly_json = res
-                print(rec.can_readonly_json)
             else:
                 rec.can_readonly = False
-                rec.can_readonly_json = {'ok':1}
-                print('sd')
+                rec.can_readonly_json = {'ok': 1}
 
 
     @api.model

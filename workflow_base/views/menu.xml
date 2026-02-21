@@ -1,16 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <menuitem name="Configuration" id="technique_config_menu"
-                  parent="base.menu_administration"   />
-       <menuitem name="Collectives" id="res_country_collective_menu"
-                  parent="technique_config_menu"  action="res_country_collective_action_window"/>
-     <menuitem name="Provinces" id="res_country_province_menu"
-                  parent="technique_config_menu"  action="res_country_province_action_window"/>
-        <menuitem name="Régions" id="res_country_state_menu"
-                  parent="technique_config_menu"  action="res_countrystate_action_window"/>
+        <!-- Main Menu under Administration -->
+        <menuitem name="Workflow Configuration"
+                  id="workflow_config_menu"
+                  parent="base.menu_administration"
+                  sequence="50"/>
 
-         <menuitem name="Emplacement" id="fleet_location_menu" parent="technique_config_menu" sequence="12"
-                  action="fleet_location_action_window"
-        />
+        <!-- Submenu: Request Types -->
+        <menuitem name="Request Types"
+                  id="request_type_menu"
+                  parent="workflow_config_menu"
+                  sequence="1"
+                  action="request_type_action_window"/>
+
+        <!-- Submenu: Stages -->
+        <menuitem name="Stages"
+                  id="request_stage_menu"
+                  parent="workflow_config_menu"
+                  sequence="2"
+                  action="request_stage_action_window"/>
+
+        <!-- Submenu: Routes -->
+        <menuitem name="Routes"
+                  id="request_stage_route_config_menu"
+                  parent="workflow_config_menu"
+                  sequence="3"
+                  action="request_stage_route_action_window"/>
+
+        <!-- Demo Workflow Menu (Separate root menu) -->
+        <menuitem name="Demo Workflow"
+                  id="demo_workflow_menu_root"
+                  sequence="100"
+                  web_icon="workflow_base,static/description/icon.png"/>
+
+        <menuitem name="Demo Requests"
+                  id="demo_request_menu"
+                  parent="demo_workflow_menu_root"
+                  sequence="1"
+                  action="demo_request_action"/>
+
     </data>
 </odoo>

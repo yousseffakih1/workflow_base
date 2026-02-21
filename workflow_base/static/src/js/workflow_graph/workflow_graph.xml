@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-    <t t-name="add_base.WorkflowGraphWidget">
+    <t t-name="workflow_base.WorkflowGraphWidget">
         <div class="app-container">
             <!-- Sidebar gauche -->
             <div class="sidebar">

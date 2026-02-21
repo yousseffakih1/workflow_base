@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workflow Base - Visual Workflow Builder for Odoo 18</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #714B67;
+            border-bottom: 3px solid #714B67;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #00A09D;
+            margin-top: 30px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .feature {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #00A09D;
+        }
+        .feature h3 {
+            color: #714B67;
+            margin-top: 0;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', monospace;
+        }
+        pre {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        pre code {
+            background: none;
+            padding: 0;
+        }
+        .highlight {
+            background: linear-gradient(135deg, #714B67 0%, #00A09D 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        .highlight h2 {
+            color: white;
+            margin-top: 0;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        .badge {
+            display: inline-block;
+            background: #00A09D;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Workflow Base</h1>
+    <p>
+        <span class="badge">Odoo 18</span>
+        <span class="badge">Visual Designer</span>
+        <span class="badge">Drag & Drop</span>
+    </p>
+
+    <div class="highlight">
+        <h2>Visual Workflow Builder for Odoo</h2>
+        <p>
+            Create and manage complex approval workflows with an intuitive drag-and-drop interface.
+            No coding required to define stages, transitions, and approval rules.
+        </p>
+    </div>
+
+    <h2>Key Features</h2>
+
+    <div class="feature-grid">
+        <div class="feature">
+            <h3>Visual Workflow Designer</h3>
+            <p>Drag and drop interface to create workflow stages and define transitions between them. See your workflow as a visual flowchart.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Request Types</h3>
+            <p>Define different workflow types for various business processes. Each type has its own stages and routes.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Stages & Routes</h3>
+            <p>Configure workflow stages with colors, visibility settings, and readonly controls. Define routes with conditions and actions.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Access Control</h3>
+            <p>Control who can move requests through specific routes using user groups and user-level permissions.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Server Actions</h3>
+            <p>Trigger automated server actions when transitioning between stages. Send emails, update records, or run custom code.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Easy Integration</h3>
+            <p>Simply inherit from <code>request.request</code> to add workflow capabilities to any Odoo model.</p>
+        </div>
+    </div>
+
+    <h2>How It Works</h2>
+
+    <ol>
+        <li><strong>Create a Request Type</strong> - Go to Administration > Workflow Configuration > Request Types</li>
+        <li><strong>Design Your Workflow</strong> - Use the visual designer to create stages and connect them with routes</li>
+        <li><strong>Configure Stages</strong> - Set colors, readonly behavior, and visibility for each stage</li>
+        <li><strong>Define Routes</strong> - Set button styles, access rights, and optional server actions</li>
+        <li><strong>Inherit in Your Model</strong> - Add workflow capabilities with a simple Python inheritance</li>
+    </ol>
+
+    <h2>Quick Start Example</h2>
+
+    <p>Add workflow capabilities to your custom model:</p>
+
+    <pre><code class="language-python">from odoo import models, fields
+
+class MyRequest(models.Model):
+    _name = 'my.request'
+    _inherit = ['request.request', 'mail.thread']
+    _description = 'My Custom Request'
+
+    name = fields.Char(string='Name', required=True)
+    description = fields.Text(string='Description')
+
+    # The stage_id and type_id fields are inherited from request.request
+    # Add readonly attribute based on stage:
+    # &lt;field name="name" readonly="can_readonly"/&gt;
+</code></pre>
+
+    <h2>Demo Module Included</h2>
+
+    <p>
+        The module includes a complete demonstration (<code>demo.request</code>) showing:
+    </p>
+
+    <ul>
+        <li>5 workflow stages: Draft &rarr; Pending &rarr; Approved/Rejected &rarr; Completed</li>
+        <li>5 routes with different button styles (Submit, Approve, Reject, Complete, Reset)</li>
+        <li>Readonly fields after submission</li>
+        <li>Kanban view grouped by stages</li>
+        <li>Priority handling</li>
+    </ul>
+
+    <h2>Requirements</h2>
+
+    <ul>
+        <li>Odoo 18.0</li>
+        <li>Base module</li>
+        <li>Mail module (for tracking)</li>
+    </ul>
+
+    <h2>License</h2>
+
+    <p>This module is licensed under LGPL-3.</p>
+
+    <h2>Support</h2>
+
+    <p>
+        For issues, feature requests, or contributions, please visit our
+        <a href="https://github.com/workflow-base/workflow_base">GitHub repository</a>.
+    </p>
+</body>
+</html>

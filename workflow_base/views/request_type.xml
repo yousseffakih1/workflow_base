@@ -55,11 +55,9 @@
         </record>
 
         <record model="ir.actions.act_window" id="request_type_action_window">
-            <field name="name">request Type</field>
+            <field name="name">Request Types</field>
             <field name="res_model">request.type</field>
             <field name="view_mode">list,form</field>
         </record>
-        <menuitem name="Request Type" id="request_type_menu" parent="technique_config_menu" sequence="12"
-                  action="request_type_action_window"/>
     </data>
 </odoo>

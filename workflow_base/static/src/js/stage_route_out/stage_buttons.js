@@ -24,10 +24,7 @@ export class StageButtons extends Component {
 
         // Updating the component state when the props change
         onWillUpdateProps(nextProps => {
-            debugger
-            //if (nextProps.value !== this.props.value) {
-                this.state.value_json = JSON.parse(nextProps.record.data[nextProps.name]);
-            //}
+            this.state.value_json = JSON.parse(nextProps.record.data[nextProps.name]);
         });
     }
     //Method makes an Odoo RPC call to fetch updated properties
@@ -85,7 +82,7 @@ export class StageButtons extends Component {
 
 }
 // Setting the component template
-StageButtons.template = 'add_base.stage_buttons'
+StageButtons.template = 'workflow_base.stage_buttons'
 export const StageButtonss = {
     component: StageButtons,
 };

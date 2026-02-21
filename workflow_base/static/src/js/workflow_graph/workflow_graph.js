@@ -8,7 +8,7 @@ import { _t } from "@web/core/l10n/translation";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 
 export class WorkflowGraphField extends Component {
-    static template = "add_base.WorkflowGraphWidget";
+    static template = "workflow_base.WorkflowGraphWidget";
     static props = {
         ...standardFieldProps,
     };
